@@ -9,9 +9,19 @@
 # and returns a two-dimensional array multiplication
 # table scaled by the scaling factor.
 # You should not be using any functions other than range.
-def multiplication_table(w, h, s):
-    return [ [ 0 for i in range(w)] for i in range(h)]
 
+
+def multiplication_table(w, h, s):
+    multiply_table = [[0 for i in range(w)] for i in range(h)]
+    if multiply_table == [[]] or multiply_table == []:              # returns none if the table is empty
+        return None
+    else:
+        for height in range(h):                                     # loop that creates the multiplication table
+            for width in range(w):
+                multiply_table[height][width] = (height + 1) * (width + 1) * s
+        return multiply_table
+    
+    
 def print_2D(b):
     for i in range(len(b)):
         print(b[i])
